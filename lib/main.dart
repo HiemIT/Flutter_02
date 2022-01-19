@@ -1,4 +1,4 @@
-// ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use, prefer_const_constructors, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_avatar/flutter_advanced_avatar.dart';
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.amber,
       ),
-      home: const MyHomePage(title: 'Messages'),
+      home: const MyHomePage(title: 'Message'),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -38,13 +38,19 @@ class _MyHomePageState extends State<MyHomePage> {
     double height = MediaQuery.of(context).size.height - 120;
     double width = MediaQuery.of(context).size.width - 8;
     return Scaffold(
-        backgroundColor: const Color(0xFF38006b),
+        backgroundColor: const Color(0xFF242A37),
         appBar: AppBar(
+          title: Text(widget.title, style: TextStyle(color: Colors.white)),
           elevation: 0.00,
-          backgroundColor: const Color(0xFF38006b),
+          backgroundColor: const Color(0xFF242A37),
           actions: <Widget>[
             IconButton(
-              icon: const Icon(Icons.add, color: Colors.white, size: 35),
+              icon: const Icon(
+                Icons.add,
+                color: Colors.white,
+                size: 35,
+              ),
+              splashColor: Color(0xFF242A37),
               onPressed: () {},
             ),
           ],
@@ -57,249 +63,132 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         body: Container(
+          padding: const EdgeInsets.only(bottom: 15.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              // Container(
+              //   decoration: BoxDecoration(
+              //     border: Border(
+              //       bottom: BorderSide(
+              //         color: const Color(0xFF000000).withOpacity(0.2),
+              //         width: 1,
+              //       ),
+              //     ),
+              //   ),
+              //   width: double.infinity,
+              //   padding:
+              //       const EdgeInsets.only(left: 15.0, bottom: 20.0, top: 20.0),
+              //   child: Text(
+              //     widget.title,
+              //     style: const TextStyle(
+              //       color: Colors.white,
+              //       fontSize: 34,
+              //       fontWeight: FontWeight.bold,
+              //     ),
+              //   ),
+              // ),
               Expanded(
                 flex: 1,
                 child: Container(
-                  margin: const EdgeInsets.only(left: 16.0),
-                  // color: Colors.deepPurple.shade900,
-                  child: Text(
-                    widget.title,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
+                    padding: const EdgeInsets.only(
+                      top: 15.0,
+                      left: 15.0,
+                      // right: 15.0,
                     ),
-                  ),
-                ),
-              ),
-              Expanded(
-                flex: 2,
-                child: Container(
-                    alignment: Alignment.center,
-                    // color: Colors.deepPurple.shade800,
                     child:
                         ListView(scrollDirection: Axis.horizontal, children: <
                             Widget>[
                       Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+                          margin: const EdgeInsets.only(
+                            right: 21.0,
+                          ),
                           child: Column(children: [
                             AdvancedAvatar(
-                              name: 'John Doe',
-                              statusColor: Colors.green,
-                              size: 50,
+                              statusSize: 12,
+                              statusColor: const Color(0xFF7ED321),
+                              size: 60,
+                              image: NetworkImage(
+                                  'https://scontent.fdad3-4.fna.fbcdn.net/v/t1.6435-9/118449399_1002977226805299_4347245413174785325_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=LF5yEZ50WzYAX-fTS2f&_nc_ht=scontent.fdad3-4.fna&oh=00_AT_HPY32YRCP-1bBWg2Qza9-QbkihzbvO05KLdIt1T7qFQ&oe=620EAA45'),
+                              foregroundDecoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: Colors.deepOrange.withOpacity(0.75),
+                                  width: 5.0,
+                                ),
+                              ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: const Text(
-                                'John Doe',
-                                style: const TextStyle(
+                            const Padding(
+                              padding: EdgeInsets.only(top: 9.0, bottom: 18.0),
+                              child: Text(
+                                'Nam Nam',
+                                style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
                             ),
                           ])),
                       Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+                          margin: const EdgeInsets.only(
+                            right: 21.0,
+                          ),
                           child: Column(children: [
                             AdvancedAvatar(
-                              name: 'John Doe',
-                              statusColor: Colors.green,
-                              size: 50,
+                              statusSize: 12,
+                              statusColor: const Color(0xFF7ED321),
+                              size: 60,
+                              image: NetworkImage(
+                                  'https://scontent.fdad3-4.fna.fbcdn.net/v/t1.6435-9/118449399_1002977226805299_4347245413174785325_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=LF5yEZ50WzYAX-fTS2f&_nc_ht=scontent.fdad3-4.fna&oh=00_AT_HPY32YRCP-1bBWg2Qza9-QbkihzbvO05KLdIt1T7qFQ&oe=620EAA45'),
+                              foregroundDecoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: Colors.deepOrange.withOpacity(0.75),
+                                  width: 5.0,
+                                ),
+                              ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: const Text(
-                                'John Doe',
-                                style: const TextStyle(
+                            const Padding(
+                              padding: EdgeInsets.only(top: 9.0, bottom: 18.0),
+                              child: Text(
+                                'Bánh Bèo',
+                                style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
                             ),
                           ])),
                       Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+                          margin: const EdgeInsets.only(
+                            right: 21.0,
+                          ),
                           child: Column(children: [
                             AdvancedAvatar(
-                              name: 'John Doe',
-                              statusColor: Colors.green,
-                              size: 50,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: const Text(
-                                'John Doe',
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
+                              statusSize: 12,
+                              statusColor: const Color(0xFF7ED321),
+                              size: 60,
+                              image: NetworkImage(
+                                  'https://scontent.fdad3-4.fna.fbcdn.net/v/t1.6435-9/118449399_1002977226805299_4347245413174785325_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=LF5yEZ50WzYAX-fTS2f&_nc_ht=scontent.fdad3-4.fna&oh=00_AT_HPY32YRCP-1bBWg2Qza9-QbkihzbvO05KLdIt1T7qFQ&oe=620EAA45'),
+                              foregroundDecoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: Colors.deepOrange.withOpacity(0.75),
+                                  width: 5.0,
                                 ),
                               ),
                             ),
-                          ])),
-                      Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                          child: Column(children: [
-                            AdvancedAvatar(
-                              name: 'John Doe',
-                              statusColor: Colors.green,
-                              size: 50,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: const Text(
-                                'John Doe',
-                                style: const TextStyle(
+                            const Padding(
+                              padding: EdgeInsets.only(top: 9.0, bottom: 18.0),
+                              child: Text(
+                                'Nam Béo',
+                                style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ])),
-                      Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                          child: Column(children: [
-                            AdvancedAvatar(
-                              name: 'John Doe',
-                              statusColor: Colors.green,
-                              size: 50,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: const Text(
-                                'John Doe',
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ])),
-                      Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                          child: Column(children: [
-                            AdvancedAvatar(
-                              name: 'John Doe',
-                              statusColor: Colors.green,
-                              size: 50,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: const Text(
-                                'John Doe',
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ])),
-                      Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                          child: Column(children: [
-                            AdvancedAvatar(
-                              name: 'John Doe',
-                              statusColor: Colors.green,
-                              size: 50,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: const Text(
-                                'John Doe',
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ])),
-                      Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                          child: Column(children: [
-                            AdvancedAvatar(
-                              name: 'John Doe',
-                              statusColor: Colors.green,
-                              size: 50,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: const Text(
-                                'John Doe',
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ])),
-                      Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                          child: Column(children: [
-                            AdvancedAvatar(
-                              name: 'John Doe',
-                              statusColor: Colors.green,
-                              size: 50,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: const Text(
-                                'John Doe',
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ])),
-                      Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                          child: Column(children: [
-                            AdvancedAvatar(
-                              name: 'John Doe',
-                              statusColor: Colors.green,
-                              size: 50,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: const Text(
-                                'John Doe',
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ])),
-                      Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                          child: Column(children: [
-                            AdvancedAvatar(
-                              name: 'John Doe',
-                              statusColor: Colors.green,
-                              size: 50,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: const Text(
-                                'John Doe',
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
                             ),
@@ -307,1089 +196,238 @@ class _MyHomePageState extends State<MyHomePage> {
                     ])),
               ),
               Expanded(
-                flex: 9,
+                flex: 5,
                 child: Container(
-                  // color: Colors.deepPurple.shade700,
+                  decoration: BoxDecoration(
+                    border: Border(
+                      top: BorderSide(
+                        color: const Color(0xFF000000).withOpacity(0.2),
+                        width: 1,
+                      ),
+                    ),
+                  ),
                   child: ListView(
                     children: <Widget>[
-                      FlatButton(
-                        onPressed: () {
-                          print('clicked');
-                        },
-                        child: Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                          height: 60,
+                      Card(
+                        clipBehavior: Clip.antiAliasWithSaveLayer,
+                        color: Color(0xFF242A37),
+                        borderOnForeground: true,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                        // color: Colors.transparent,
+
+                        child: FlatButton(
+                          onPressed: () {
+                            debugPrint('Button pressed');
+                          },
+                          padding: const EdgeInsets.only(
+                              left: 15.0, right: 16.0, top: 18.0, bottom: 14.0),
                           child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Container(
-                                width: 50,
-                                height: 50,
-                                child: const CircleAvatar(
-                                  backgroundColor: Colors.cyan,
-                                  radius: 100,
-                                  backgroundImage: NetworkImage(
-                                      'https://scontent.fdad3-5.fna.fbcdn.net/v/t1.6435-9/131545795_205777824461906_4053968479474811575_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=FlZcf9zhx6EAX8LaD7H&_nc_ht=scontent.fdad3-5.fna&oh=00_AT9ZsJn4j-TUqN6piNyr188OMvg1kLk5q4TVFrPF3YOJXA&oe=620AC98C'),
+                              SizedBox(
+                                width: 60,
+                                height: 60,
+                                child: CircleAvatar(
+                                  backgroundColor: Colors.brown.shade800,
+                                  backgroundImage: const NetworkImage(
+                                      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80"),
                                 ),
                               ),
-                              Container(
-                                width: width * 0.70,
-                                decoration: BoxDecoration(
-                                  border: Border(
-                                    bottom: BorderSide(
-                                      color: Colors.deepPurple.shade500,
-                                      width: 0.5,
-                                    ),
-                                  ),
-                                ),
-                                child: Expanded(
-                                    child: Column(children: <Widget>[
-                                  Expanded(
-                                    child: Container(
-                                        // color: Colors.deepPurple.shade100,
-                                        child: Row(children: <Widget>[
-                                      Expanded(
-                                          flex: 3,
-                                          child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 8.0),
-                                            child: RichText(
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.start,
-                                              text: const TextSpan(
-                                                text: 'Y Hiêm kbuôr',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                              ),
-                                            ),
-                                          )),
-                                      Expanded(
-                                          flex: 1,
-                                          child: Container(
-                                            child: const Text(
-                                              '4:30 PM',
-                                              style: TextStyle(
-                                                color: Colors.white54,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          )),
-                                    ])),
-                                  ),
-                                  Container(
-                                    width: double.infinity,
-                                    padding: const EdgeInsets.only(bottom: 8.0),
-                                    child: Expanded(
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 9.0),
-                                        child: Container(
-                                            child: RichText(
-                                                maxLines: 1,
-                                                overflow: TextOverflow.ellipsis,
-                                                textAlign: TextAlign.start,
-                                                text: const TextSpan(
-                                                  text:
-                                                      'Hello, how are you?. Can you help me?Pro',
-                                                  style: TextStyle(
-                                                    color: Colors.white54,
-                                                    fontSize: 15,
-                                                    fontWeight: FontWeight.w400,
+                              // ignore: avoid_unnecessary_containers
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Container(
+                                      child: Row(
+                                        children: <Widget>[
+                                          Expanded(
+                                              flex: 3,
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 8.0),
+                                                child: RichText(
+                                                  // ignore: prefer_const_constructors
+                                                  text: TextSpan(
+                                                    text: 'John Wick',
+                                                    style: const TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 17,
+                                                        fontWeight:
+                                                            FontWeight.bold),
                                                   ),
-                                                ))),
+                                                  textAlign: TextAlign.left,
+                                                  textScaleFactor: 1.0,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  maxLines: 1,
+                                                ),
+                                              )),
+                                          // Thời gian tin nhắn được nhận
+                                          Expanded(
+                                            flex: 1,
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: RichText(
+                                                text: TextSpan(
+                                                  text: '19:59PM',
+                                                  style: const TextStyle(
+                                                      color: Color(0xFF4E586E),
+                                                      fontSize: 13,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                                textAlign: TextAlign.right,
+                                                textScaleFactor: 1.0,
+                                                overflow: TextOverflow.ellipsis,
+                                                maxLines: 1,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                  )
-                                ])),
+                                    // Phần nội dung tin nhắn
+                                    Container(
+                                      padding: const EdgeInsets.only(
+                                          left: 8.0, top: 2.0),
+                                      child: RichText(
+                                        text: TextSpan(
+                                          text:
+                                              'What did you do over the weekend? I was working on a project with my team.',
+                                          style: const TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                        textAlign: TextAlign.left,
+                                        textScaleFactor: 0.9,
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 1,
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             ],
                           ),
                         ),
                       ),
-                      FlatButton(
-                        onPressed: () {
-                          print('clicked');
-                        },
-                        child: Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                          height: 60,
+                      Card(
+                        clipBehavior: Clip.antiAliasWithSaveLayer,
+                        color: Color(0xFF242A37),
+                        borderOnForeground: true,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                        // color: Colors.transparent,
+
+                        child: FlatButton(
+                          onPressed: () {
+                            debugPrint('Button pressed');
+                          },
+                          padding: const EdgeInsets.only(
+                              left: 15.0, right: 16.0, top: 18.0, bottom: 14.0),
                           child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Container(
-                                width: 50,
-                                height: 50,
-                                child: const CircleAvatar(
-                                  backgroundColor: Colors.cyan,
-                                  radius: 100,
-                                  backgroundImage: NetworkImage(
-                                      'https://scontent.fdad3-5.fna.fbcdn.net/v/t1.6435-9/131545795_205777824461906_4053968479474811575_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=FlZcf9zhx6EAX8LaD7H&_nc_ht=scontent.fdad3-5.fna&oh=00_AT9ZsJn4j-TUqN6piNyr188OMvg1kLk5q4TVFrPF3YOJXA&oe=620AC98C'),
+                              SizedBox(
+                                width: 60,
+                                height: 60,
+                                child: CircleAvatar(
+                                  backgroundColor: Colors.brown.shade800,
+                                  backgroundImage: const NetworkImage(
+                                      "https://scontent.fdad3-4.fna.fbcdn.net/v/t1.6435-9/118449399_1002977226805299_4347245413174785325_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=LF5yEZ50WzYAX-fTS2f&_nc_ht=scontent.fdad3-4.fna&oh=00_AT_HPY32YRCP-1bBWg2Qza9-QbkihzbvO05KLdIt1T7qFQ&oe=620EAA45"),
                                 ),
                               ),
-                              Container(
-                                width: width * 0.70,
-                                decoration: BoxDecoration(
-                                  border: Border(
-                                    bottom: BorderSide(
-                                      color: Colors.deepPurple.shade500,
-                                      width: 0.5,
-                                    ),
-                                  ),
-                                ),
-                                child: Expanded(
-                                    child: Column(children: <Widget>[
-                                  Expanded(
-                                    child: Container(
-                                        // color: Colors.deepPurple.shade100,
-                                        child: Row(children: <Widget>[
-                                      Expanded(
-                                          flex: 3,
-                                          child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 8.0),
-                                            child: RichText(
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.start,
-                                              text: const TextSpan(
-                                                text: 'Y Hiêm kbuôr',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                              ),
-                                            ),
-                                          )),
-                                      Expanded(
-                                          flex: 1,
-                                          child: Container(
-                                            child: const Text(
-                                              '4:30 PM',
-                                              style: TextStyle(
-                                                color: Colors.white54,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          )),
-                                    ])),
-                                  ),
-                                  Container(
-                                    width: double.infinity,
-                                    padding: const EdgeInsets.only(bottom: 8.0),
-                                    child: Expanded(
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 9.0),
-                                        child: Container(
-                                            child: RichText(
-                                                maxLines: 1,
-                                                overflow: TextOverflow.ellipsis,
-                                                textAlign: TextAlign.start,
-                                                text: const TextSpan(
-                                                  text:
-                                                      'Hello, how are you?. Can you help me?Pro',
-                                                  style: TextStyle(
-                                                    color: Colors.white54,
-                                                    fontSize: 15,
-                                                    fontWeight: FontWeight.w400,
+                              // ignore: avoid_unnecessary_containers
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Container(
+                                      child: Row(
+                                        children: <Widget>[
+                                          Expanded(
+                                              flex: 3,
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 8.0),
+                                                child: RichText(
+                                                  // ignore: prefer_const_constructors
+                                                  text: TextSpan(
+                                                    text: 'Nam Nam',
+                                                    style: const TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 17,
+                                                        fontWeight:
+                                                            FontWeight.bold),
                                                   ),
-                                                ))),
+                                                  textAlign: TextAlign.left,
+                                                  textScaleFactor: 1.0,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  maxLines: 1,
+                                                ),
+                                              )),
+                                          // Thời gian tin nhắn được nhận
+                                          Expanded(
+                                            flex: 1,
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: RichText(
+                                                text: TextSpan(
+                                                  text: '02:39PM',
+                                                  style: const TextStyle(
+                                                      color: Color(0xFF4E586E),
+                                                      fontSize: 13,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                                textAlign: TextAlign.right,
+                                                textScaleFactor: 1.0,
+                                                overflow: TextOverflow.ellipsis,
+                                                maxLines: 1,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                  )
-                                ])),
+                                    // Phần nội dung tin nhắn
+                                    Container(
+                                      padding: const EdgeInsets.only(
+                                          left: 8.0, top: 2.0),
+                                      child: RichText(
+                                        text: TextSpan(
+                                          text:
+                                              'Mày ơi, tao bị điên rồi mày có thể gọi tao là Nam điên nhé',
+                                          style: const TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                        textAlign: TextAlign.left,
+                                        textScaleFactor: 0.9,
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 1,
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             ],
                           ),
                         ),
-                      ),
-                      FlatButton(
-                        onPressed: () {
-                          print('clicked');
-                        },
-                        child: Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                          height: 60,
-                          child: Row(
-                            children: <Widget>[
-                              Container(
-                                width: 50,
-                                height: 50,
-                                child: const CircleAvatar(
-                                  backgroundColor: Colors.cyan,
-                                  radius: 100,
-                                  backgroundImage: NetworkImage(
-                                      'https://scontent.fdad3-5.fna.fbcdn.net/v/t1.6435-9/131545795_205777824461906_4053968479474811575_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=FlZcf9zhx6EAX8LaD7H&_nc_ht=scontent.fdad3-5.fna&oh=00_AT9ZsJn4j-TUqN6piNyr188OMvg1kLk5q4TVFrPF3YOJXA&oe=620AC98C'),
-                                ),
-                              ),
-                              Container(
-                                width: width * 0.70,
-                                decoration: BoxDecoration(
-                                  border: Border(
-                                    bottom: BorderSide(
-                                      color: Colors.deepPurple.shade500,
-                                      width: 0.5,
-                                    ),
-                                  ),
-                                ),
-                                child: Expanded(
-                                    child: Column(children: <Widget>[
-                                  Expanded(
-                                    child: Container(
-                                        // color: Colors.deepPurple.shade100,
-                                        child: Row(children: <Widget>[
-                                      Expanded(
-                                          flex: 3,
-                                          child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 8.0),
-                                            child: RichText(
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.start,
-                                              text: const TextSpan(
-                                                text: 'Y Hiêm kbuôr',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                              ),
-                                            ),
-                                          )),
-                                      Expanded(
-                                          flex: 1,
-                                          child: Container(
-                                            child: const Text(
-                                              '4:30 PM',
-                                              style: TextStyle(
-                                                color: Colors.white54,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          )),
-                                    ])),
-                                  ),
-                                  Container(
-                                    width: double.infinity,
-                                    padding: const EdgeInsets.only(bottom: 8.0),
-                                    child: Expanded(
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 9.0),
-                                        child: Container(
-                                            child: RichText(
-                                                maxLines: 1,
-                                                overflow: TextOverflow.ellipsis,
-                                                textAlign: TextAlign.start,
-                                                text: const TextSpan(
-                                                  text:
-                                                      'Hello, how are you?. Can you help me?Pro',
-                                                  style: TextStyle(
-                                                    color: Colors.white54,
-                                                    fontSize: 15,
-                                                    fontWeight: FontWeight.w400,
-                                                  ),
-                                                ))),
-                                      ),
-                                    ),
-                                  )
-                                ])),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      FlatButton(
-                        onPressed: () {
-                          print('clicked');
-                        },
-                        child: Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                          height: 60,
-                          child: Row(
-                            children: <Widget>[
-                              Container(
-                                width: 50,
-                                height: 50,
-                                child: const CircleAvatar(
-                                  backgroundColor: Colors.cyan,
-                                  radius: 100,
-                                  backgroundImage: NetworkImage(
-                                      'https://scontent.fdad3-5.fna.fbcdn.net/v/t1.6435-9/131545795_205777824461906_4053968479474811575_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=FlZcf9zhx6EAX8LaD7H&_nc_ht=scontent.fdad3-5.fna&oh=00_AT9ZsJn4j-TUqN6piNyr188OMvg1kLk5q4TVFrPF3YOJXA&oe=620AC98C'),
-                                ),
-                              ),
-                              Container(
-                                width: width * 0.70,
-                                decoration: BoxDecoration(
-                                  border: Border(
-                                    bottom: BorderSide(
-                                      color: Colors.deepPurple.shade500,
-                                      width: 0.5,
-                                    ),
-                                  ),
-                                ),
-                                child: Expanded(
-                                    child: Column(children: <Widget>[
-                                  Expanded(
-                                    child: Container(
-                                        // color: Colors.deepPurple.shade100,
-                                        child: Row(children: <Widget>[
-                                      Expanded(
-                                          flex: 3,
-                                          child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 8.0),
-                                            child: RichText(
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.start,
-                                              text: const TextSpan(
-                                                text: 'Y Hiêm kbuôr',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                              ),
-                                            ),
-                                          )),
-                                      Expanded(
-                                          flex: 1,
-                                          child: Container(
-                                            child: const Text(
-                                              '4:30 PM',
-                                              style: TextStyle(
-                                                color: Colors.white54,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          )),
-                                    ])),
-                                  ),
-                                  Container(
-                                    width: double.infinity,
-                                    padding: const EdgeInsets.only(bottom: 8.0),
-                                    child: Expanded(
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 9.0),
-                                        child: Container(
-                                            child: RichText(
-                                                maxLines: 1,
-                                                overflow: TextOverflow.ellipsis,
-                                                textAlign: TextAlign.start,
-                                                text: const TextSpan(
-                                                  text:
-                                                      'Hello, how are you?. Can you help me?Pro',
-                                                  style: TextStyle(
-                                                    color: Colors.white54,
-                                                    fontSize: 15,
-                                                    fontWeight: FontWeight.w400,
-                                                  ),
-                                                ))),
-                                      ),
-                                    ),
-                                  )
-                                ])),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      FlatButton(
-                        onPressed: () {
-                          print('clicked');
-                        },
-                        child: Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                          height: 60,
-                          child: Row(
-                            children: <Widget>[
-                              Container(
-                                width: 50,
-                                height: 50,
-                                child: const CircleAvatar(
-                                  backgroundColor: Colors.cyan,
-                                  radius: 100,
-                                  backgroundImage: NetworkImage(
-                                      'https://scontent.fdad3-5.fna.fbcdn.net/v/t1.6435-9/131545795_205777824461906_4053968479474811575_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=FlZcf9zhx6EAX8LaD7H&_nc_ht=scontent.fdad3-5.fna&oh=00_AT9ZsJn4j-TUqN6piNyr188OMvg1kLk5q4TVFrPF3YOJXA&oe=620AC98C'),
-                                ),
-                              ),
-                              Container(
-                                width: width * 0.70,
-                                decoration: BoxDecoration(
-                                  border: Border(
-                                    bottom: BorderSide(
-                                      color: Colors.deepPurple.shade500,
-                                      width: 0.5,
-                                    ),
-                                  ),
-                                ),
-                                child: Expanded(
-                                    child: Column(children: <Widget>[
-                                  Expanded(
-                                    child: Container(
-                                        // color: Colors.deepPurple.shade100,
-                                        child: Row(children: <Widget>[
-                                      Expanded(
-                                          flex: 3,
-                                          child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 8.0),
-                                            child: RichText(
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.start,
-                                              text: const TextSpan(
-                                                text: 'Y Hiêm kbuôr',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                              ),
-                                            ),
-                                          )),
-                                      Expanded(
-                                          flex: 1,
-                                          child: Container(
-                                            child: const Text(
-                                              '4:30 PM',
-                                              style: TextStyle(
-                                                color: Colors.white54,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          )),
-                                    ])),
-                                  ),
-                                  Container(
-                                    width: double.infinity,
-                                    padding: const EdgeInsets.only(bottom: 8.0),
-                                    child: Expanded(
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 9.0),
-                                        child: Container(
-                                            child: RichText(
-                                                maxLines: 1,
-                                                overflow: TextOverflow.ellipsis,
-                                                textAlign: TextAlign.start,
-                                                text: const TextSpan(
-                                                  text:
-                                                      'Hello, how are you?. Can you help me?Pro',
-                                                  style: TextStyle(
-                                                    color: Colors.white54,
-                                                    fontSize: 15,
-                                                    fontWeight: FontWeight.w400,
-                                                  ),
-                                                ))),
-                                      ),
-                                    ),
-                                  )
-                                ])),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      FlatButton(
-                        onPressed: () {
-                          print('clicked');
-                        },
-                        child: Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                          height: 60,
-                          child: Row(
-                            children: <Widget>[
-                              Container(
-                                width: 50,
-                                height: 50,
-                                child: const CircleAvatar(
-                                  backgroundColor: Colors.cyan,
-                                  radius: 100,
-                                  backgroundImage: NetworkImage(
-                                      'https://scontent.fdad3-5.fna.fbcdn.net/v/t1.6435-9/131545795_205777824461906_4053968479474811575_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=FlZcf9zhx6EAX8LaD7H&_nc_ht=scontent.fdad3-5.fna&oh=00_AT9ZsJn4j-TUqN6piNyr188OMvg1kLk5q4TVFrPF3YOJXA&oe=620AC98C'),
-                                ),
-                              ),
-                              Container(
-                                width: width * 0.70,
-                                decoration: BoxDecoration(
-                                  border: Border(
-                                    bottom: BorderSide(
-                                      color: Colors.deepPurple.shade500,
-                                      width: 0.5,
-                                    ),
-                                  ),
-                                ),
-                                child: Expanded(
-                                    child: Column(children: <Widget>[
-                                  Expanded(
-                                    child: Container(
-                                        // color: Colors.deepPurple.shade100,
-                                        child: Row(children: <Widget>[
-                                      Expanded(
-                                          flex: 3,
-                                          child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 8.0),
-                                            child: RichText(
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.start,
-                                              text: const TextSpan(
-                                                text: 'Y Hiêm kbuôr',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                              ),
-                                            ),
-                                          )),
-                                      Expanded(
-                                          flex: 1,
-                                          child: Container(
-                                            child: const Text(
-                                              '4:30 PM',
-                                              style: TextStyle(
-                                                color: Colors.white54,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          )),
-                                    ])),
-                                  ),
-                                  Container(
-                                    width: double.infinity,
-                                    padding: const EdgeInsets.only(bottom: 8.0),
-                                    child: Expanded(
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 9.0),
-                                        child: Container(
-                                            child: RichText(
-                                                maxLines: 1,
-                                                overflow: TextOverflow.ellipsis,
-                                                textAlign: TextAlign.start,
-                                                text: const TextSpan(
-                                                  text:
-                                                      'Hello, how are you?. Can you help me?Pro',
-                                                  style: TextStyle(
-                                                    color: Colors.white54,
-                                                    fontSize: 15,
-                                                    fontWeight: FontWeight.w400,
-                                                  ),
-                                                ))),
-                                      ),
-                                    ),
-                                  )
-                                ])),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      FlatButton(
-                        onPressed: () {
-                          print('clicked');
-                        },
-                        child: Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                          height: 60,
-                          child: Row(
-                            children: <Widget>[
-                              Container(
-                                width: 50,
-                                height: 50,
-                                child: const CircleAvatar(
-                                  backgroundColor: Colors.cyan,
-                                  radius: 100,
-                                  backgroundImage: NetworkImage(
-                                      'https://scontent.fdad3-5.fna.fbcdn.net/v/t1.6435-9/131545795_205777824461906_4053968479474811575_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=FlZcf9zhx6EAX8LaD7H&_nc_ht=scontent.fdad3-5.fna&oh=00_AT9ZsJn4j-TUqN6piNyr188OMvg1kLk5q4TVFrPF3YOJXA&oe=620AC98C'),
-                                ),
-                              ),
-                              Container(
-                                width: width * 0.70,
-                                decoration: BoxDecoration(
-                                  border: Border(
-                                    bottom: BorderSide(
-                                      color: Colors.deepPurple.shade500,
-                                      width: 0.5,
-                                    ),
-                                  ),
-                                ),
-                                child: Expanded(
-                                    child: Column(children: <Widget>[
-                                  Expanded(
-                                    child: Container(
-                                        // color: Colors.deepPurple.shade100,
-                                        child: Row(children: <Widget>[
-                                      Expanded(
-                                          flex: 3,
-                                          child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 8.0),
-                                            child: RichText(
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.start,
-                                              text: const TextSpan(
-                                                text: 'Y Hiêm kbuôr',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                              ),
-                                            ),
-                                          )),
-                                      Expanded(
-                                          flex: 1,
-                                          child: Container(
-                                            child: const Text(
-                                              '4:30 PM',
-                                              style: TextStyle(
-                                                color: Colors.white54,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          )),
-                                    ])),
-                                  ),
-                                  Container(
-                                    width: double.infinity,
-                                    padding: const EdgeInsets.only(bottom: 8.0),
-                                    child: Expanded(
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 9.0),
-                                        child: Container(
-                                            child: RichText(
-                                                maxLines: 1,
-                                                overflow: TextOverflow.ellipsis,
-                                                textAlign: TextAlign.start,
-                                                text: const TextSpan(
-                                                  text:
-                                                      'Hello, how are you?. Can you help me?Pro',
-                                                  style: TextStyle(
-                                                    color: Colors.white54,
-                                                    fontSize: 15,
-                                                    fontWeight: FontWeight.w400,
-                                                  ),
-                                                ))),
-                                      ),
-                                    ),
-                                  )
-                                ])),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      FlatButton(
-                        onPressed: () {
-                          print('clicked');
-                        },
-                        child: Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                          height: 60,
-                          child: Row(
-                            children: <Widget>[
-                              Container(
-                                width: 50,
-                                height: 50,
-                                child: const CircleAvatar(
-                                  backgroundColor: Colors.cyan,
-                                  radius: 100,
-                                  backgroundImage: NetworkImage(
-                                      'https://scontent.fdad3-5.fna.fbcdn.net/v/t1.6435-9/131545795_205777824461906_4053968479474811575_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=FlZcf9zhx6EAX8LaD7H&_nc_ht=scontent.fdad3-5.fna&oh=00_AT9ZsJn4j-TUqN6piNyr188OMvg1kLk5q4TVFrPF3YOJXA&oe=620AC98C'),
-                                ),
-                              ),
-                              Container(
-                                width: width * 0.70,
-                                decoration: BoxDecoration(
-                                  border: Border(
-                                    bottom: BorderSide(
-                                      color: Colors.deepPurple.shade500,
-                                      width: 0.5,
-                                    ),
-                                  ),
-                                ),
-                                child: Expanded(
-                                    child: Column(children: <Widget>[
-                                  Expanded(
-                                    child: Container(
-                                        // color: Colors.deepPurple.shade100,
-                                        child: Row(children: <Widget>[
-                                      Expanded(
-                                          flex: 3,
-                                          child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 8.0),
-                                            child: RichText(
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.start,
-                                              text: const TextSpan(
-                                                text: 'Y Hiêm kbuôr',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                              ),
-                                            ),
-                                          )),
-                                      Expanded(
-                                          flex: 1,
-                                          child: Container(
-                                            child: const Text(
-                                              '4:30 PM',
-                                              style: TextStyle(
-                                                color: Colors.white54,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          )),
-                                    ])),
-                                  ),
-                                  Container(
-                                    width: double.infinity,
-                                    padding: const EdgeInsets.only(bottom: 8.0),
-                                    child: Expanded(
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 9.0),
-                                        child: Container(
-                                            child: RichText(
-                                                maxLines: 1,
-                                                overflow: TextOverflow.ellipsis,
-                                                textAlign: TextAlign.start,
-                                                text: const TextSpan(
-                                                  text:
-                                                      'Hello, how are you?. Can you help me?Pro',
-                                                  style: TextStyle(
-                                                    color: Colors.white54,
-                                                    fontSize: 15,
-                                                    fontWeight: FontWeight.w400,
-                                                  ),
-                                                ))),
-                                      ),
-                                    ),
-                                  )
-                                ])),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      FlatButton(
-                        onPressed: () {
-                          print('clicked');
-                        },
-                        child: Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                          height: 60,
-                          child: Row(
-                            children: <Widget>[
-                              Container(
-                                width: 50,
-                                height: 50,
-                                child: const CircleAvatar(
-                                  backgroundColor: Colors.cyan,
-                                  radius: 100,
-                                  backgroundImage: NetworkImage(
-                                      'https://scontent.fdad3-5.fna.fbcdn.net/v/t1.6435-9/131545795_205777824461906_4053968479474811575_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=FlZcf9zhx6EAX8LaD7H&_nc_ht=scontent.fdad3-5.fna&oh=00_AT9ZsJn4j-TUqN6piNyr188OMvg1kLk5q4TVFrPF3YOJXA&oe=620AC98C'),
-                                ),
-                              ),
-                              Container(
-                                width: width * 0.70,
-                                decoration: BoxDecoration(
-                                  border: Border(
-                                    bottom: BorderSide(
-                                      color: Colors.deepPurple.shade500,
-                                      width: 0.5,
-                                    ),
-                                  ),
-                                ),
-                                child: Expanded(
-                                    child: Column(children: <Widget>[
-                                  Expanded(
-                                    child: Container(
-                                        // color: Colors.deepPurple.shade100,
-                                        child: Row(children: <Widget>[
-                                      Expanded(
-                                          flex: 3,
-                                          child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 8.0),
-                                            child: RichText(
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.start,
-                                              text: const TextSpan(
-                                                text: 'Y Hiêm kbuôr',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                              ),
-                                            ),
-                                          )),
-                                      Expanded(
-                                          flex: 1,
-                                          child: Container(
-                                            child: const Text(
-                                              '4:30 PM',
-                                              style: TextStyle(
-                                                color: Colors.white54,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          )),
-                                    ])),
-                                  ),
-                                  Container(
-                                    width: double.infinity,
-                                    padding: const EdgeInsets.only(bottom: 8.0),
-                                    child: Expanded(
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 9.0),
-                                        child: Container(
-                                            child: RichText(
-                                                maxLines: 1,
-                                                overflow: TextOverflow.ellipsis,
-                                                textAlign: TextAlign.start,
-                                                text: const TextSpan(
-                                                  text:
-                                                      'Hello, how are you?. Can you help me?Pro',
-                                                  style: TextStyle(
-                                                    color: Colors.white54,
-                                                    fontSize: 15,
-                                                    fontWeight: FontWeight.w400,
-                                                  ),
-                                                ))),
-                                      ),
-                                    ),
-                                  )
-                                ])),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      FlatButton(
-                        onPressed: () {
-                          print('clicked');
-                        },
-                        child: Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                          height: 60,
-                          child: Row(
-                            children: <Widget>[
-                              Container(
-                                width: 50,
-                                height: 50,
-                                child: const CircleAvatar(
-                                  backgroundColor: Colors.cyan,
-                                  radius: 100,
-                                  backgroundImage: NetworkImage(
-                                      'https://scontent.fdad3-5.fna.fbcdn.net/v/t1.6435-9/131545795_205777824461906_4053968479474811575_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=FlZcf9zhx6EAX8LaD7H&_nc_ht=scontent.fdad3-5.fna&oh=00_AT9ZsJn4j-TUqN6piNyr188OMvg1kLk5q4TVFrPF3YOJXA&oe=620AC98C'),
-                                ),
-                              ),
-                              Container(
-                                width: width * 0.70,
-                                decoration: BoxDecoration(
-                                  border: Border(
-                                    bottom: BorderSide(
-                                      color: Colors.deepPurple.shade500,
-                                      width: 0.5,
-                                    ),
-                                  ),
-                                ),
-                                child: Expanded(
-                                    child: Column(children: <Widget>[
-                                  Expanded(
-                                    child: Container(
-                                        // color: Colors.deepPurple.shade100,
-                                        child: Row(children: <Widget>[
-                                      Expanded(
-                                          flex: 3,
-                                          child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 8.0),
-                                            child: RichText(
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.start,
-                                              text: const TextSpan(
-                                                text: 'Y Hiêm kbuôr',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                              ),
-                                            ),
-                                          )),
-                                      Expanded(
-                                          flex: 1,
-                                          child: Container(
-                                            child: const Text(
-                                              '4:30 PM',
-                                              style: TextStyle(
-                                                color: Colors.white54,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          )),
-                                    ])),
-                                  ),
-                                  Container(
-                                    width: double.infinity,
-                                    padding: const EdgeInsets.only(bottom: 8.0),
-                                    child: Expanded(
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 9.0),
-                                        child: Container(
-                                            child: RichText(
-                                                maxLines: 1,
-                                                overflow: TextOverflow.ellipsis,
-                                                textAlign: TextAlign.start,
-                                                text: const TextSpan(
-                                                  text:
-                                                      'Hello, how are you?. Can you help me?Pro',
-                                                  style: TextStyle(
-                                                    color: Colors.white54,
-                                                    fontSize: 15,
-                                                    fontWeight: FontWeight.w400,
-                                                  ),
-                                                ))),
-                                      ),
-                                    ),
-                                  )
-                                ])),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      FlatButton(
-                        onPressed: () {
-                          print('clicked');
-                        },
-                        child: Container(
-                          margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                          height: 60,
-                          child: Row(
-                            children: <Widget>[
-                              Container(
-                                width: 50,
-                                height: 50,
-                                child: const CircleAvatar(
-                                  backgroundColor: Colors.cyan,
-                                  radius: 100,
-                                  backgroundImage: NetworkImage(
-                                      'https://scontent.fdad3-5.fna.fbcdn.net/v/t1.6435-9/131545795_205777824461906_4053968479474811575_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=FlZcf9zhx6EAX8LaD7H&_nc_ht=scontent.fdad3-5.fna&oh=00_AT9ZsJn4j-TUqN6piNyr188OMvg1kLk5q4TVFrPF3YOJXA&oe=620AC98C'),
-                                ),
-                              ),
-                              Container(
-                                width: width * 0.70,
-                                decoration: BoxDecoration(
-                                  border: Border(
-                                    bottom: BorderSide(
-                                      color: Colors.deepPurple.shade500,
-                                      width: 0.5,
-                                    ),
-                                  ),
-                                ),
-                                child: Expanded(
-                                    child: Column(children: <Widget>[
-                                  Expanded(
-                                    child: Container(
-                                        // color: Colors.deepPurple.shade100,
-                                        child: Row(children: <Widget>[
-                                      Expanded(
-                                          flex: 3,
-                                          child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 8.0),
-                                            child: RichText(
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.start,
-                                              text: const TextSpan(
-                                                text: 'Y Hiêm kbuôr',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                              ),
-                                            ),
-                                          )),
-                                      Expanded(
-                                          flex: 1,
-                                          child: Container(
-                                            child: const Text(
-                                              '4:30 PM',
-                                              style: TextStyle(
-                                                color: Colors.white54,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          )),
-                                    ])),
-                                  ),
-                                  Container(
-                                    width: double.infinity,
-                                    padding: const EdgeInsets.only(bottom: 8.0),
-                                    child: Expanded(
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 9.0),
-                                        child: Container(
-                                            child: RichText(
-                                                maxLines: 1,
-                                                overflow: TextOverflow.ellipsis,
-                                                textAlign: TextAlign.start,
-                                                text: const TextSpan(
-                                                  text:
-                                                      'Hello, how are you?. Can you help me?Pro',
-                                                  style: TextStyle(
-                                                    color: Colors.white54,
-                                                    fontSize: 15,
-                                                    fontWeight: FontWeight.w400,
-                                                  ),
-                                                ))),
-                                      ),
-                                    ),
-                                  )
-                                ])),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                      )
                     ],
                   ),
                 ),
@@ -1399,108 +437,5 @@ class _MyHomePageState extends State<MyHomePage> {
         )
         // This trailing comma makes auto-formatting nicer for build methods.
         );
-  }
-}
-
-class Card extends StatelessWidget {
-  const Card({
-    Key? key,
-    required this.width,
-  }) : super(key: key);
-
-  final double width;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-      height: 60,
-      child: Row(
-        children: <Widget>[
-          Container(
-            width: 50,
-            height: 50,
-            child: const CircleAvatar(
-              backgroundColor: Colors.cyan,
-              radius: 100,
-              backgroundImage: NetworkImage(
-                  'https://scontent.fdad3-5.fna.fbcdn.net/v/t1.6435-9/131545795_205777824461906_4053968479474811575_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=FlZcf9zhx6EAX8LaD7H&_nc_ht=scontent.fdad3-5.fna&oh=00_AT9ZsJn4j-TUqN6piNyr188OMvg1kLk5q4TVFrPF3YOJXA&oe=620AC98C'),
-            ),
-          ),
-          Container(
-            width: width * 0.7,
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  color: Colors.deepPurple.shade500,
-                  width: 0.5,
-                ),
-              ),
-            ),
-            child: Expanded(
-                child: Column(children: <Widget>[
-              Expanded(
-                child: Container(
-                    // color: Colors.deepPurple.shade100,
-                    child: Row(children: <Widget>[
-                  Expanded(
-                      flex: 3,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
-                        child: RichText(
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.start,
-                          text: const TextSpan(
-                            text: 'Y Hiêm kbuôr',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      )),
-                  Expanded(
-                      flex: 1,
-                      child: Container(
-                        child: const Text(
-                          '4:30 PM',
-                          style: TextStyle(
-                            color: Colors.white54,
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      )),
-                ])),
-              ),
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.only(bottom: 8.0),
-                child: Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: Container(
-                        child: RichText(
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.start,
-                            text: const TextSpan(
-                              text: 'Hello, how are you?. Can you help me?',
-                              style: TextStyle(
-                                color: Colors.white54,
-                                fontSize: 15,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ))),
-                  ),
-                ),
-              )
-            ])),
-          ),
-        ],
-      ),
-    );
   }
 }
